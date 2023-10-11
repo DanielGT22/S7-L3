@@ -19,11 +19,10 @@ fetch("https://striveschool-api.herokuapp.com/books")
   })
   .then((bookData) => {
     for (let i = 0; i < bookData.length; i++) {
-      let item = bookData[i];
-      let image = item.img;
-      let name = item.title;
-      let price = item.price;
-      let category = item.category;
+      let image = bookData[i].img;
+      let name = bookData[i].title;
+      let price = bookData[i].price;
+      let category = bookData[i].category;
 
       imgElements[i].src = image;
       titleElements[i].textContent = name;
@@ -33,5 +32,4 @@ fetch("https://striveschool-api.herokuapp.com/books")
   })
   .catch((err) => {
     console.log(err);
-    // You can handle errors here, e.g., show an alert
   });
